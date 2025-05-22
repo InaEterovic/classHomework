@@ -1,7 +1,4 @@
 import "./App.css";
-import { Dashboard } from "./components/Dashboard";
-import { ProfileCard } from "./components/ProfileCard";
-import { users } from "./components/users";
 
 function App() {
   return (
