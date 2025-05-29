@@ -13,40 +13,44 @@ import ControlledForm from "./components/FE 11/ControlledForm";
 import ReactHookForm from "./components/FE 11/ReactHookForm";
 import ContactForm from "./components/FE 11/ContactForm";
 import LiftStateParent from "./components/mini project questions/LiftStateParent";
+import { ThemeProvider } from "./components/FE 13/context/ThemeContext";
+import Navbar from "./components/navbar/NavBar";
 
 function App() {
   const isAuthenticated = false;
 
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/effect-hook" element={<UseEffectDemo />} />
-      <Route path="/state-hook" element={<UseStateDemo />} />
-      <Route path="/ref-hook" element={<UseRefDemo />} />
-      <Route path="/controlled-form" element={<ControlledForm />} />
-      <Route path="/rhf" element={<ReactHookForm />} />
-      <Route path="/contact" element={<ContactForm />} />
-      <Route path="/lift-state" element={<LiftStateParent />} />
-      <Route
-        path="/users"
-        element={
-          <ProtectedRoute isAuthenticated={isAuthenticated}>
-            <UserList />
-          </ProtectedRoute>
-        }
-      />
-
-      <Route
-        path="/users/:id"
-        element={
-          <ProtectedRoute isAuthenticated={isAuthenticated}>
-            <UserProfile />
-          </ProtectedRoute>
-        }
-      />
-      <Route path="/forbidden" element={<AccessForbidden />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <ThemeProvider>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/effect-hook" element={<UseEffectDemo />} />
+        <Route path="/state-hook" element={<UseStateDemo />} />
+        <Route path="/ref-hook" element={<UseRefDemo />} />
+        <Route path="/controlled-form" element={<ControlledForm />} />
+        <Route path="/rhf" element={<ReactHookForm />} />
+        <Route path="/contact" element={<ContactForm />} />
+        <Route path="/lift-state" element={<LiftStateParent />} />
+        <Route
+          path="/users"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <UserList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/users/:id"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <UserProfile />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/forbidden" element={<AccessForbidden />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </ThemeProvider>
   );
 }
 
