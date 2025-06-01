@@ -15,6 +15,10 @@ import ContactForm from "./components/FE 11/ContactForm";
 import LiftStateParent from "./components/mini project questions/LiftStateParent";
 import { ThemeProvider } from "./components/FE 13/context/ThemeContext";
 import Navbar from "./components/navbar/NavBar";
+import ItemList from "./components/FE 14/ItemList";
+import BrokenEffect from "./components/FE 14/BrokenEffect";
+import ProductSearch from "./components/FE 14/ProductSearch";
+import TodoApp from "./components/FE 14/ToDo";
 
 function App() {
   const isAuthenticated = false;
@@ -31,6 +35,12 @@ function App() {
         <Route path="/rhf" element={<ReactHookForm />} />
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/lift-state" element={<LiftStateParent />} />
+
+        <Route path="/item-list" element={<ItemList />} />
+        <Route path="/broken" element={<BrokenEffect />} />
+        <Route path="/product-search" element={<ProductSearch />} />
+        <Route path="/to-do" element={<TodoApp />} />
+
         <Route
           path="/users"
           element={
