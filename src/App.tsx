@@ -19,6 +19,7 @@ import ItemList from "./components/FE 14/ItemList";
 import BrokenEffect from "./components/FE 14/BrokenEffect";
 import ProductSearch from "./components/FE 14/ProductSearch";
 import TodoApp from "./components/FE 14/ToDo";
+import Users from "./features/Users";
 
 function App() {
   const isAuthenticated = false;
@@ -40,6 +41,8 @@ function App() {
         <Route path="/broken" element={<BrokenEffect />} />
         <Route path="/product-search" element={<ProductSearch />} />
         <Route path="/to-do" element={<TodoApp />} />
+
+        <Route path="/redux-users" element={<Users />} />
 
         <Route
           path="/users"
